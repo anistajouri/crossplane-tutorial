@@ -3,6 +3,7 @@ apiVersion: devopstoolkitseries.com/v1alpha1
 kind: ClusterClaim
 metadata:
   name: cluster-01
+  namespace: a-team    # Added namespace
 spec:
   id: cluster-01
   compositionSelector:
@@ -17,6 +18,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: silly-demo-db-password
+  namespace: a-team    # Added namespace
 data:
   password: cG9zdGdyZXM=
 ---
@@ -24,6 +26,7 @@ apiVersion: devopstoolkitseries.com/v1alpha1
 kind: SQLClaim
 metadata:
   name: silly-demo-db
+  namespace: a-team    # Added namespace
 spec:
   id: silly-demo-db
   compositionSelector:
@@ -40,6 +43,7 @@ apiVersion: devopstoolkitseries.com/v1alpha1
 kind: AppClaim
 metadata:
   name: silly-demo
+  namespace: a-team    # Added namespace
 spec:
   id: silly-demo
   compositionSelector:
@@ -54,4 +58,5 @@ spec:
     dbSecret:
       name: silly-demo-db
       namespace: a-team
-    kubernetesProviderConfigName: cluster-01
+    kubernetesProvierConfigName: cluster-01
+
